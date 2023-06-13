@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Exercise Tracker</title>
+</head>
+<body>
+  <h1 style="color: #4CAF50;text-align:center;">Exercise Tracker</h1>
+  <h2 style="color: #212121;">Today's Exercises</h2>
+  <ul>
+    {% for exercise in exercises %}
+    <li>
+      <a href="/exercise/{{ exercise.id }}">{{ exercise.name }}</a>
+      <br>
+      Type: {{ exercise.type }}
+      <br>
+      Duration: {{ exercise.duration }} minutes
+      <br>
+      Calories Burned: {{ exercise.calories_burned }}
+      <br>
+      Date: {{ exercise.date }}
+    </li>
+    {% endfor %}
+  </ul>
+  <h2 style="color: #4CAF50;">Total Calories Burned Today: {{ total_calories }}</h2>
+
+<div class="workout-photos">
+  <img src="path-to-photo1.jpg" alt="Workout Photo 1">
+  <img src="path-to-photo2.jpg" alt="Workout Photo 2">
+  <!-- Add more <img> elements for additional workout photos -->
+</div>
+
+<div style="background-color: #f0f0f0; padding: 10px;">
+  <h3>Here are some tips for getting the most out of your workout:</h3>
+  <ul>
+    <li>Warm up before you start exercising.</li>
+    <li>Cool down after you finish exercising.</li>
+    <li>Drink plenty of water.</li>
+    <li>Listen to your body and don't push yourself too hard.</li>
+  </ul>
+</div>
+
+</body>
+</html>
